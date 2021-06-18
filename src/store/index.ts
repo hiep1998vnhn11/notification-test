@@ -1,18 +1,22 @@
 import { createStore } from 'vuex'
+import user from './modules/user'
 
 const store = createStore({
-  state: {
+  state: () => ({
     items: [],
     recentItems: [],
     isShowQueuePlaylist: false,
     isProgressBusy: false,
-  },
+  }),
   mutations: {
     SET_STATE: function (state: any, payload: [string, any]) {
       const [key, value] = payload
       state[key] = value
-      console.log(state[key])
     },
+  },
+
+  modules: {
+    user,
   },
 })
 

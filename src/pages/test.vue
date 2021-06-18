@@ -1,5 +1,5 @@
 <template>
-  <div>index page</div>
+  <div>test page</div>
   <button class="btn btn-neutral" @click="makeItems(1)">Test</button>
   <div>
     {{ items }}

@@ -5,6 +5,19 @@ import routes from './routes'
 import store from './store'
 import '@/assets/scss/styles.scss'
 
+routes.beforeEach((to: any, from: any) => {
+  if (to.meta.requireAuth && !store.getters['user/isLogin']) {
+    return {
+      name: 'login',
+    }
+  }
+  if (to.meta.requireAdmin) {
+    return
+  }
+  if (to.meta.requireGuest) {
+  }
+})
+
 const app = createApp(App)
 app.use(PerfectScrollbar)
 app.use(routes)
