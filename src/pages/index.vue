@@ -1,6 +1,6 @@
 <template>
   <div>index page</div>
-  <button @click="login">Test</button>
+  <button class="btn btn-neutral" @click="login">Test</button>
   <div>
     {{ items }}
   </div>
