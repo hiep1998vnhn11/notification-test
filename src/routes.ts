@@ -21,15 +21,19 @@ const routes: RouteRecordRaw[] = [
       requireAuth: true,
     },
     children: [
-      { path: '/', component: () => import('@/pages/index.vue') },
+      {
+        path: '/',
+        name: 'index',
+        component: () => import('@/pages/index.vue'),
+      },
       { path: '/test', component: () => import('@/pages/test.vue') },
     ],
   },
   {
     path: '/login',
+    name: 'login',
     component: () => import('@/layouts/login.vue'),
     meta: { requireGuest: true },
-    children: [{ path: '/', component: () => import('@/pages/index.vue') }],
   },
   {
     path: '/admin',

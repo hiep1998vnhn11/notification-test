@@ -1,6 +1,6 @@
 <template>
   <div>index page</div>
-  <button class="btn btn-neutral" @click="makeItems(1)">Test</button>
+  <button class="btn btn-neutral" @click="login()">Test</button>
   <div>
     {{ items }}
   </div>
@@ -21,11 +21,10 @@ export default {
     const errors = ref([])
     async function login() {
       try {
-        const { data } = await loginApi({
+        await store.dispatch('user/login', {
           email: 'hiep@gmail.com',
           password: '123456',
         })
-        console.log(data)
       } catch (err) {
         errors.value = err.response.data.errors
       }

@@ -4,6 +4,7 @@ import PerfectScrollbar from 'vue3-perfect-scrollbar'
 import routes from './routes'
 import store from './store'
 import '@/assets/scss/styles.scss'
+import 'vue3-perfect-scrollbar/dist/vue3-perfect-scrollbar.css'
 
 routes.beforeEach((to: any, from: any) => {
   if (to.meta.requireAuth && !store.getters['user/isLogin']) {
