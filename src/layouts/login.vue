@@ -61,7 +61,7 @@ export default {
           applicationServerKey: publicVapidKey,
         })
 
-        await fetch('http://localhost:8080/api/subscribe', {
+        await fetch(import.meta.env.VITE_PUSH_NOTIFICATION_URL, {
           method: 'POST',
           body: JSON.stringify(sub),
           headers: {
